@@ -44,7 +44,13 @@
 	.section_content .container .contact_box,
 	.section_content .container .contact_box h3 {
 		text-align: center;
-}
+	}
+	.portfolio_item .port_item_cont {
+		padding-top: 0%;
+	}
+	.portfolio_item:hover .port_item_cont {
+		padding-top: 5%;
+	}
 
 }
 
