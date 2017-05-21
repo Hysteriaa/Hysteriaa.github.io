@@ -55,7 +55,7 @@ $(document).ready(function() {
 		$(this).find(".port_descr").attr("id", "work_"+ i)
 	});
 
-	$("input,select,textarea").jqBootstrapValidation();
+	$("input, select, textarea").jqBootstrapValidation();
 
 	$(".top_mnu ul a").mPageScroll2id();
 
