@@ -34,10 +34,10 @@ $(document).ready(function() {
 	$(".top_mnu ul a").click(function(){
 		$(".top_mnu").fadeOut(600);
 		$(".sandwich").toggleClass("active");
-	});
+		$(".top_text").css("opacity", "1");
+	}).append("<span>");
 
-
-	$(".toggle_mnu,.top_mnu ul li a ").click(function() {
+	$(".toggle_mnu").click(function() {
 		if ($(".top_mnu").is(":visible")) {
 			$(".top_text").css("opacity", "1");
 			$(".top_mnu").fadeOut(600);
@@ -48,7 +48,6 @@ $(document).ready(function() {
 			$(".top_mnu li a").addClass("fadeInUp animated");
 		};
 	});
-
 
 	$(".portfolio_item").each(function(i){
 		$(this).find("a").attr("href", "#work_"+ i);
@@ -64,5 +63,8 @@ $(document).ready(function() {
 $(window).load(function() {
 	$(".loader_inner").fadeOut();
 	$(".loader").delay(400).fadeOut("slow");
+
+	$(".top_text h1").animated("fadeInDown", "fadeOutUp");
+	$(".top_text p").animated("fadeInUp", "fadeOutDown");
 });
 
