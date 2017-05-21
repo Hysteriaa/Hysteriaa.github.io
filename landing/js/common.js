@@ -7,22 +7,19 @@ $(document).ready(function() {
 		$(this).addClass("active");
 	});
 
-	$(".popup").magnificPopup({type:"image"});
-	$(".popup_content").magnificPopup({
-		type:"inline",
-		midClick: true
-	});
+	$(".popup").magnificPopup({type:'image'});
+	$(".popup_content").magnificPopup({type:'inline', midClick: true});
 
+	$(".top_text h1").animated("fadeInDown", "fadeOutUp");
+	$(".top_text p").animated("fadeInUp", "fadeOutDown");
 	$(".section_header").animated("fadeInUp", "fadeOutDown");
 
-	$(".animation_1").animated("flipInY", "fadeOutDown");
-	$(".animation_2").animated("fadeInLeft", "fadeOutDown");
-	$(".animation_3").animated("fadeInRight", "fadeOutDown");
+	$(".resume_item").animated("fadeIn", "fadeOut");
 
-	$(".left .resume_item").animated("fadeInLeft", "fadeOutDown");
-	$(".right .resume_item").animated("fadeInRight", "fadeOutDown");
+	$(".animation_about").animated("fadeIn", "fadeOut");
+	
 
-	function heightDetect() {
+	function heightDetect(){
 		$(".main_head").css("height", $(window).height());
 	};
 	heightDetect();
@@ -30,44 +27,41 @@ $(document).ready(function() {
 		heightDetect();
 	});
 
-	$(".toggle_mnu").click(function() {
+	$(".toggle_mnu").click(function(){
 		$(".sandwich").toggleClass("active");
 	});
 
-	$(".top_mnu ul a").click(function() {
+	$(".top_mnu ul a").click(function(){
 		$(".top_mnu").fadeOut(600);
 		$(".sandwich").toggleClass("active");
-		$(".top_text").css("opacity", "1");
-	}).append("<span>");
+	});
 
 	$(".toggle_mnu").click(function() {
 		if ($(".top_mnu").is(":visible")) {
-			$(".top_text").css("opacity", "1");
+			$(".top_text").removeClass("h_opacity");
 			$(".top_mnu").fadeOut(600);
 			$(".top_mnu li a").removeClass("fadeInUp animated");
 		} else {
-			$(".top_text").css("opacity", ".1");
+			$(".top_text").addClass("h_opacity");
 			$(".top_mnu").fadeIn(600);
 			$(".top_mnu li a").addClass("fadeInUp animated");
 		};
 	});
 
-	$(".portfolio_item").each(function(i) {
-		$(this).find("a").attr("href", "#work_" + i);
-		$(this).find(".podrt_descr").attr("id", "work_" + i);
+
+	$(".portfolio_item").each(function(i){
+		$(this).find("a").attr("href", "#work_"+ i);
+		$(this).find(".port_descr").attr("id", "work_"+ i)
 	});
 
-	$("input, select, textarea").jqBootstrapValidation();
+	$("input,select,textarea").jqBootstrapValidation();
 
 	$(".top_mnu ul a").mPageScroll2id();
 
 });
-$(window).load(function() {
 
+$(window).load(function() {
 	$(".loader_inner").fadeOut();
 	$(".loader").delay(400).fadeOut("slow");
+});
 
-	$(".top_text h1").animated("fadeInDown", "fadeOutUp");
-	$(".top_text p").animated("fadeInUp", "fadeOutDown");
-
-}); 
